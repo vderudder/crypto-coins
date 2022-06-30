@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICoinLight } from '../interfaces/coin-light';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-coins-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoinsListComponent implements OnInit {
 
-  constructor() { }
+  public coins: ICoinLight[] = [];
+
+  constructor(
+    private apiService: ApiService
+  ) { }
 
   ngOnInit(): void {
+    this.apiService.getCoinsList().subscribe(list => {
+      this.coins = list;
+    });
   }
+
 
 }

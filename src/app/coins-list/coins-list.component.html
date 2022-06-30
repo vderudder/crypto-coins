@@ -1,29 +1,11 @@
 <div>
     <h1>Available coins</h1>
-    <div>
-        <h3>Coin Name</h3>
-        <p>Coin id</p>
-        <button routerLink="/coin/1">See more</button>
-    </div>
-    <div>
-        <h3>Coin Name</h3>
-        <p>Coin id</p>
-        <button routerLink="/coin/1">See more</button>
-    </div>
-    <div>
-        <h3>Coin Name</h3>
-        <p>Coin id</p>
-        <button routerLink="/coin/1">See more</button>
-    </div>
-    <div>
-        <h3>Coin Name</h3>
-        <p>Coin id</p>
-        <button routerLink="/coin/1">See more</button>
+    <div *ngIf="coins.length">
+        <div *ngFor="let coin of coins">
+            <h3>{{coin.name}}</h3>
+            <p>{{coin.id}}</p>
+            <button routerLink="/coin/1">See more</button>
+        </div>
     </div>
 
-    <div>
-        <h3>Coin Name</h3>
-        <p>Coin id</p>
-        <button routerLink="/coin/1">See more</button>
-    </div>
 </div>
