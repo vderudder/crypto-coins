@@ -1,0 +1,11 @@
+/** Este archivo se usa para importar bootstrap de una forma que se puedan sobreescribir sus estilos **/
+
+// Se incluyen las functions primero, para poder manipular colores, SVGs, calc, etc
+@import '~bootstrap/scss/functions';
+
+// Importar archivo que sobreescribe las variables de bootstrap
+@import 'variables';
+
+// Importar todo bootstrap para que se pueda usar normalmente
+// TODO: ver si no hay problemas al importar esto, ya que las functions se estarían reimportando
+@import '~bootstrap/scss/bootstrap';

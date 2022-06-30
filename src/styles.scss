@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+/** Este archivo sirve como punto principal para importar otros archivos scss **/
+
+// Utilizado para sobreescribir estilos por defecto de bootstrap
+@import './assets/bootstrap-custom.scss';
+
+// Estilos globales para toda la app
+//@import './assets/global.scss';
+
+
