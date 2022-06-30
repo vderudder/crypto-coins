@@ -4,7 +4,7 @@
         <div *ngFor="let coin of coins">
             <h3>{{coin.name}}</h3>
             <p>{{coin.id}}</p>
-            <button routerLink="/coin/1">See more</button>
+            <button routerLink="/coin/{{coin.id}}">See more</button>
         </div>
     </div>
 

@@ -18,7 +18,7 @@ export class ApiService {
   }
 
   getCoinById(id: string) {
-    return this.httpClient.get<ICoin>(`https://api.coingecko.com/api/v3/coins/${id}`);
+    return this.httpClient.get<any>(`https://api.coingecko.com/api/v3/coins/${id}`);
   }
 
 

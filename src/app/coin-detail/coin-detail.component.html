@@ -1,14 +1,17 @@
 <div>
     <button routerLink="/list">Go back</button>
-    <h3>Coin name</h3>
-    <p>Coin id</p>
-    <img src="" alt="Coin img">
-    <div>
-        <h4>Coin price</h4>
-        <h5>Coin rank / Coin score</h5>
-        <p>More info</p>
-        <p>Coin link 1</p>
-        <p>Coin link 2</p>
-        <p>Coin platform</p>
+    <div *ngIf="coin">
+        <h3>{{coin.name}}</h3>
+        <p>{{coin.id}}</p>
+        <img src={{coin.image}} alt={{coin.name}}>
+        <div>
+            <h4>{{coin.price}}</h4>
+            <h5>{{coin.rank}} / {{coin.score}}</h5>
+            <p>More info</p>
+            <p>{{coin.link1}}</p>
+            <p>{{coin.link2}}</p>
+            <p>{{coin.platform}}</p>
+        </div>
     </div>
+    
 </div>
