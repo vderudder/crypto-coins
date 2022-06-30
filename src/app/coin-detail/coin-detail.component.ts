@@ -18,10 +18,12 @@ export class CoinDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Get id from route url
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
     if (id) {
+      // Call api service with id from url
       this.apiService.getCoinById(id).subscribe(coin => {
+        // Get coin necessary coin info for detail
         this.coin = {
           id: coin.id,
           name: coin.name,
@@ -35,7 +37,7 @@ export class CoinDetailComponent implements OnInit {
         };
       });
     };
-    
+
   };
 
 }
