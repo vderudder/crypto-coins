@@ -2,8 +2,14 @@
     background: #E8E8E8;
 }
 
+// Gradient text
 .bg-text {
     background             : -webkit-linear-gradient(0deg,#2695d3 -13.92%,rgba(48,159,222,0) 229.21%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.size-spinner {
+    width: 4rem;
+    height: 4rem;
 }
