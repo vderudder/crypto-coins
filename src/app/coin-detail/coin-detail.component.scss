@@ -1,0 +1,38 @@
+.bg-custom {
+    background    : #E8E8E8;
+    height        : 100vh;
+    padding-bottom: 1rem;
+}
+
+.fs-7 {
+    font-size: 14px;
+}
+
+.badge-padding {
+    padding: 0.5rem;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.btn-outline-primary:hover {
+    color: #ffffff;
+}
+
+// This is to fit link within its content to prevent pointer cursor taking whole line
+.w-fit {
+    max-width: fit-content;
+}
+
+.img-crypto {
+    width: 80px;
+    filter: invert(1);
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .badge-padding {
+        max-width: fit-content;
+    }
+}

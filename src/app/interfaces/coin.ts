@@ -5,6 +5,7 @@ export interface ICoin {
     price: string;
     rank: string;
     score: string;
+    description: string;
     link1: string;
     link2: string;
     platform: string;

@@ -1,17 +1,49 @@
-<div>
-    <button routerLink="/list">Go back</button>
-    <div *ngIf="coin">
-        <h3>{{coin.name}}</h3>
-        <p>{{coin.id}}</p>
-        <img src={{coin.image}} alt={{coin.name}}>
-        <div>
-            <h4>{{coin.price}}</h4>
-            <h5>{{coin.rank}} / {{coin.score}}</h5>
-            <p>More info</p>
-            <p>{{coin.link1}}</p>
-            <p>{{coin.link2}}</p>
-            <p>{{coin.platform}}</p>
+<div class="bg-custom">
+    <!-- Coin available -->
+    <div *ngIf="!isError" class="container">
+        <div *ngIf="coin">
+            <!-- Toolbar -->
+            <div class="toolbar d-flex align-items-center justify-content-between py-3">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-outline-primary" routerLink="/list"><strong class="fs-1">
+                            ‹ </strong></button>
+                    <h4 class="mb-0 mx-3">{{coin.name}}</h4>
+                </div>
+
+                <img class="rounded-circle" src={{coin.image}} alt={{coin.name}}>
+            </div>
+
+
+            <p class="fw-light fs-7">{{coin.id}}</p>
+
+            <!-- Detail card -->
+            <div class="card my-3 p-4 border-0 shadow-sm">
+
+                <h4 *ngIf="!coin.price" class="fw-bold fs-2">No price available</h4>
+                <h4 *ngIf="coin.price" class="fw-bold fs-2">${{coin.price}}</h4>
+                <span class="badge bg-dark badge-padding">Rank #{{coin.rank}} / Score {{coin.score}}</span>
+                <p *ngIf="!coin.description" class="my-4">No description available</p>
+                <p *ngIf="coin.description" class="my-4 truncate-string text-justify" [innerHTML]="coin.description"></p>
+                <p class="fw-bold mb-1 fs-7">More info</p>
+                <a class="fs-7 w-fit" href={{coin.link1}}>{{coin.link1}}</a>
+                <a class="fs-7 w-fit" href={{coin.link2}}>{{coin.link2}}</a>
+                <hr>
+                <p class="text-end m-0 fs-7 text-muted">{{coin.platform}}</p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- Error state -->
+    <div *ngIf="isError">
+        <div class="vh-100 bg-primary bg-gradient d-flex flex-column justify-content-center align-items-center">
+            <img src="../../assets/img/error.png" alt="" class="img-crypto">
+            <h1 class="text-white mb-4 fw-bold text-center">Oops! This coin does not exist</h1>
+            <button type="button" class="btn btn-light ff-muli fw-bold text-primary" routerLink="/list">Go back</button>
         </div>
     </div>
-    
+
 </div>
