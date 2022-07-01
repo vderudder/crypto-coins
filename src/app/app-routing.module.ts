@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'list', component: CoinsListComponent},
   {path: 'coin/:id', component: CoinDetailComponent},
+  {path: '**', redirectTo: '/'},
 
 ];
 
